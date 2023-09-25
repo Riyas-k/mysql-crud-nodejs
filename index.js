@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config()
 const connection = require("./connection");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -80,7 +82,7 @@ app.post("/employees", (req, res) => {
     console.log(error);
   }
 });
-
-app.listen(3000, (req, res) => {
+const PORT = process.env.PORT
+app.listen(PORT, (req, res) => {
   console.log("connection set");
 });
